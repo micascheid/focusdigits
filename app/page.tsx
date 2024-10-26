@@ -1,7 +1,6 @@
-// app/page.tsx
 'use client';
 
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useSession, signIn } from 'next-auth/react';
 import { useState, useEffect } from 'react';
 import {
     Container,
@@ -12,12 +11,9 @@ import {
     Box,
     Stack,
     AppBar,
-    Toolbar,
-    IconButton,
     Alert,
     Divider,
 } from '@mui/material';
-import { Logout } from '@mui/icons-material';
 
 export default function Home() {
     const { data: session, status } = useSession();
