@@ -33,7 +33,7 @@ export default function Home() {
 
     const fetchUserClock = async () => {
         try {
-            const response = await fetch('/api/get-user-clock');
+            const response = await fetch('/api/get-user');
             const data = await response.json();
             if (data.clockId) {
                 setClockId(data.clockId);
@@ -61,7 +61,7 @@ export default function Home() {
         }
 
         try {
-            const response = await fetch('/api/register-clock', {
+            const response = await fetch('/api/clock/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ clockId }),
@@ -86,7 +86,7 @@ export default function Home() {
         }
 
         try {
-            const response = await fetch('/api/update-display', {
+            const response = await fetch('/api/clock/update-display', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ clockId, displayValue }),
